@@ -1,47 +1,56 @@
 
+import { Link } from 'react-router-dom';
+
 const Services = () => {
   const services = [
     {
       icon: "⭐",
       title: "Astrology",
       description: "Deep birth chart dives + actionable cosmic guidance for your life path",
-      features: ["Detailed Birth Chart Analysis", "Yearly Predictions", "Relationship Compatibility"]
+      features: ["Detailed Birth Chart Analysis", "Yearly Predictions", "Relationship Compatibility"],
+      link: "/services/astrology"
     },
     {
       icon: "🤲",
       title: "Palmistry", 
       description: "Decode your life map from your hands and unlock your destiny",
-      features: ["Life Line Reading", "Career Guidance", "Health Indicators"]
+      features: ["Life Line Reading", "Career Guidance", "Health Indicators"],
+      link: "/services/palmistry"
     },
     {
       icon: "🧠",
       title: "Mind Reading",
       description: "Unlock subconscious blocks and reveal hidden potential",
-      features: ["Subconscious Analysis", "Pattern Recognition", "Mental Clarity"]
+      features: ["Subconscious Analysis", "Pattern Recognition", "Mental Clarity"],
+      link: "/services/mind-reading"
     },
     {
       icon: "👤",
       title: "Face Reading",
       description: "Understand character traits + karmic clues written in your features",
-      features: ["Personality Analysis", "Life Purpose", "Karmic Insights"]
+      features: ["Personality Analysis", "Life Purpose", "Karmic Insights"],
+      link: "/services/face-reading"
     },
     {
       icon: "💫",
       title: "Hypnotherapy",
       description: "Heal trauma, crush bad patterns, reprogram self-worth",
-      features: ["Trauma Healing", "Habit Breaking", "Confidence Building"]
+      features: ["Trauma Healing", "Habit Breaking", "Confidence Building"],
+      link: "/services/hypnotherapy"
     },
     {
       icon: "🎵",
       title: "Music Therapy",
       description: "Sacred soundscapes for emotional release and spiritual connection",
-      features: ["Healing Frequencies", "Emotional Release", "Chakra Balancing"]
+      features: ["Healing Frequencies", "Emotional Release", "Chakra Balancing"],
+      link: "/services/music-therapy"
     },
     {
       icon: "🧘",
       title: "Meditation",
       description: "Guided journeys into inner peace, daily presence, and soul strength",
-      features: ["Daily Practice", "Guided Sessions", "Mindfulness Training"]
+      features: ["Daily Practice", "Guided Sessions", "Mindfulness Training"],
+      link: "/services/meditation"
     }
   ];
 
@@ -69,7 +78,7 @@ const Services = () => {
               </div>
               <h3 className="text-2xl font-bold mb-3 cosmic-text">{service.title}</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-4">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center text-sm text-gray-500">
                     <span className="w-2 h-2 rounded-full cosmic-gradient mr-2"></span>
@@ -77,9 +86,11 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <button className="mt-4 w-full py-2 px-4 border-2 border-purple-200 text-purple-600 rounded-lg hover:cosmic-gradient hover:text-white transition-all duration-300">
-                Learn More
-              </button>
+              <Link to={service.link}>
+                <button className="mt-4 w-full py-2 px-4 border-2 border-purple-200 text-purple-600 rounded-lg hover:cosmic-gradient hover:text-white transition-all duration-300">
+                  Learn More
+                </button>
+              </Link>
             </div>
           ))}
         </div>

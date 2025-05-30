@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 rounded-full cosmic-gradient flex items-center justify-center">
               <span className="text-white font-bold text-lg">🔮</span>
             </div>
@@ -18,16 +19,18 @@ const Header = () => {
               <h1 className="text-xl font-bold cosmic-text">Guruji Cosmos Trust</h1>
               <p className="text-xs text-gray-600">Where Ancient Wisdom Meets Modern Seekers</p>
             </div>
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors">Services</a>
-            <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Features</a>
-            <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors">About</a>
-            <Button className="cosmic-gradient text-white hover:opacity-90 transition-opacity">
-              Begin Your Journey
-            </Button>
+            <Link to="/services/astrology" className="text-gray-700 hover:text-purple-600 transition-colors">Services</Link>
+            <Link to="/about" className="text-gray-700 hover:text-purple-600 transition-colors">About</Link>
+            <Link to="/practitioners" className="text-gray-700 hover:text-purple-600 transition-colors">Practitioners</Link>
+            <Link to="/free-soul-report">
+              <Button className="cosmic-gradient text-white hover:opacity-90 transition-opacity">
+                Begin Your Journey
+              </Button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -47,12 +50,14 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 py-4 border-t border-purple-100">
             <nav className="flex flex-col space-y-4">
-              <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors">Services</a>
-              <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Features</a>
-              <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors">About</a>
-              <Button className="cosmic-gradient text-white hover:opacity-90 transition-opacity w-full">
-                Begin Your Journey
-              </Button>
+              <Link to="/services/astrology" className="text-gray-700 hover:text-purple-600 transition-colors">Services</Link>
+              <Link to="/about" className="text-gray-700 hover:text-purple-600 transition-colors">About</Link>
+              <Link to="/practitioners" className="text-gray-700 hover:text-purple-600 transition-colors">Practitioners</Link>
+              <Link to="/free-soul-report">
+                <Button className="cosmic-gradient text-white hover:opacity-90 transition-opacity w-full">
+                  Begin Your Journey
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
