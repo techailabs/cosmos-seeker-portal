@@ -6,6 +6,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+// Auth Pages
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+// Dashboard Pages
+import Dashboard from "./pages/Dashboard";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 // Service Pages
 import AstrologyService from "./pages/services/AstrologyService";
@@ -44,6 +53,24 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          {/* Authentication Pages */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          
+          {/* Protected Dashboard Pages */}
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+          
+          {/* Admin Pages */}
+          <Route path="/admin/dashboard" element={
+            <ProtectedRoute requiredRole="admin">
+              <AdminDashboard />
+            </ProtectedRoute>
+          } />
           
           {/* Service Pages */}
           <Route path="/services/astrology" element={<AstrologyService />} />
