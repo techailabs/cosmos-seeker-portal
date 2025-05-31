@@ -8,15 +8,21 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0 mystical-gradient opacity-90"></div>
       
-      {/* Floating Elements */}
+      {/* Floating Elements - Enhanced Astrological Symbols */}
       <div className="absolute top-20 left-10 animate-float">
-        <div className="w-4 h-4 rounded-full bg-yellow-400 opacity-70"></div>
+        <div className="text-4xl opacity-70 animate-pulse-soft">♈</div>
       </div>
       <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: '2s' }}>
-        <div className="w-6 h-6 rounded-full bg-purple-400 opacity-60"></div>
+        <div className="text-5xl opacity-60 animate-pulse-soft">☽</div>
       </div>
       <div className="absolute bottom-40 left-20 animate-float" style={{ animationDelay: '4s' }}>
-        <div className="w-3 h-3 rounded-full bg-pink-400 opacity-80"></div>
+        <div className="text-3xl opacity-80 animate-pulse-soft">✧</div>
+      </div>
+      <div className="absolute top-1/3 right-1/4 animate-float" style={{ animationDelay: '1s' }}>
+        <div className="text-3xl opacity-50 animate-pulse-soft">☿</div>
+      </div>
+      <div className="absolute bottom-1/3 left-1/3 animate-float" style={{ animationDelay: '3s' }}>
+        <div className="text-4xl opacity-60 animate-pulse-soft">♃</div>
       </div>
 
       {/* Content */}
@@ -26,53 +32,52 @@ const Hero = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
-          Transform Your
+          Ancient Wisdom,
           <span className="block golden-gradient bg-clip-text text-transparent">
-            Spiritual Journey
+            Modern Awakening
           </span>
         </h1>
         
-        <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-          Where ancient wisdom meets the next generation of seekers. 
-          Experience deep cosmic guidance, healing therapies, and personalized spiritual growth 
-          in one sacred-tech fusion hub.
+        <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-4xl mx-auto leading-relaxed">
+          Discover your cosmic blueprint, heal emotional blocks, and evolve spiritually — 
+          all in one sacred digital space.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Link to="/free-soul-report">
             <Button 
               size="lg" 
               className="golden-gradient text-white hover:opacity-90 transition-all duration-300 px-8 py-4 text-lg font-semibold glow"
             >
-              Get Your Free Soul Report 🌟
+              Start Your Journey 🌟
             </Button>
           </Link>
-          <Link to="/services/astrology">
+          <Link to="/cosmic-quiz">
             <Button 
               size="lg" 
               variant="outline" 
               className="border-white text-white hover:bg-white hover:text-purple-900 transition-all duration-300 px-8 py-4 text-lg"
             >
-              Explore Services
+              Get a Free Mini Reading
             </Button>
           </Link>
         </div>
         
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 hover:bg-white/20 transition-all duration-300">
             <div className="text-3xl mb-2">⭐</div>
             <div className="text-2xl font-bold mb-1">10,000+</div>
-            <div className="text-gray-200">Transformations</div>
+            <div className="text-gray-200">Lives Touched</div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 hover:bg-white/20 transition-all duration-300">
             <div className="text-3xl mb-2">🧘</div>
-            <div className="text-2xl font-bold mb-1">7</div>
-            <div className="text-gray-200">Healing Modalities</div>
+            <div className="text-2xl font-bold mb-1">Certified</div>
+            <div className="text-gray-200">Practitioners Only</div>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 hover:bg-white/20 transition-all duration-300">
-            <div className="text-3xl mb-2">🌙</div>
-            <div className="text-2xl font-bold mb-1">24/7</div>
-            <div className="text-gray-200">Spiritual Support</div>
+            <div className="text-3xl mb-2">🔒</div>
+            <div className="text-2xl font-bold mb-1">100%</div>
+            <div className="text-gray-200">Confidential & Safe</div>
           </div>
         </div>
       </div>
