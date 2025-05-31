@@ -10,7 +10,7 @@ interface ProtectedRouteProps {
 const ProtectedRoute = ({ children, requiredRole = 'user' }: ProtectedRouteProps) => {
   // TODO: Implement actual authentication check with Supabase
   const isAuthenticated = false; // This will be replaced with actual auth state
-  const userRole = 'user'; // This will be fetched from auth context
+  const userRole: 'user' | 'admin' = 'user'; // This will be fetched from auth context
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
