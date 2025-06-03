@@ -50,7 +50,6 @@ const FindPathQuiz = () => {
   };
 
   const getRecommendation = () => {
-    // Simple recommendation logic based on answers
     if (answers.includes('astrology') || answers.includes('career')) {
       return {
         service: 'Astrology Reading',
@@ -91,27 +90,27 @@ const FindPathQuiz = () => {
   if (showResult) {
     const recommendation = getRecommendation();
     return (
-      <section className="py-20 cosmic-gradient text-white">
+      <section className="py-12 md:py-20 cosmic-gradient text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="text-6xl mb-6">{recommendation.icon}</div>
-            <h2 className="text-4xl font-bold mb-4">Your Soul Path:</h2>
-            <h3 className="text-2xl golden-gradient bg-clip-text text-transparent mb-6">
+            <div className="text-5xl md:text-6xl mb-4 md:mb-6">{recommendation.icon}</div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">Your Soul Path:</h2>
+            <h3 className="text-xl md:text-2xl golden-gradient bg-clip-text text-transparent mb-4 md:mb-6">
               {recommendation.service}
             </h3>
-            <p className="text-xl mb-8 text-purple-100">
+            <p className="text-lg md:text-xl mb-6 md:mb-8 text-purple-100">
               {recommendation.description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={recommendation.link}>
-                <Button size="lg" className="golden-gradient text-white hover:opacity-90 px-8 py-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <Link to={recommendation.link} className="w-full sm:w-auto">
+                <Button size="lg" className="golden-gradient text-white hover:opacity-90 px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
                   Book Your Session
                 </Button>
               </Link>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4"
+                className="border-white text-white hover:bg-white hover:text-purple-900 px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto"
                 onClick={resetQuiz}
               >
                 Retake Quiz
@@ -124,17 +123,17 @@ const FindPathQuiz = () => {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 to-indigo-100">
+    <section className="py-12 md:py-20 bg-gradient-to-br from-purple-50 to-indigo-100">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold mb-4 cosmic-text">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 cosmic-text leading-tight">
               Find Your Path
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-lg md:text-xl text-gray-600">
               Discover which service aligns with your current energy
             </p>
-            <div className="mt-4">
+            <div className="mt-3 md:mt-4">
               <div className="bg-white rounded-full h-2 overflow-hidden">
                 <div 
                   className="cosmic-gradient h-2 transition-all duration-300"
@@ -147,16 +146,16 @@ const FindPathQuiz = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold mb-6 text-center cosmic-text">
+          <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
+            <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center cosmic-text leading-tight">
               {questions[currentQuestion].question}
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {questions[currentQuestion].options.map((option, index) => (
                 <button
                   key={index}
                   onClick={() => handleAnswer(option.value)}
-                  className="w-full p-4 text-left border-2 border-purple-100 rounded-lg hover:border-purple-300 hover:bg-purple-50 transition-all duration-200"
+                  className="w-full p-3 md:p-4 text-left border-2 border-purple-100 rounded-lg hover:border-purple-300 hover:bg-purple-50 transition-all duration-200 text-sm md:text-base touch-manipulation"
                 >
                   {option.text}
                 </button>
