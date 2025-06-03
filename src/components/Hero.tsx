@@ -1,10 +1,7 @@
-
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden star-field">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden star-field">
       {/* Background */}
       <div className="absolute inset-0 mystical-gradient opacity-90"></div>
       
@@ -12,16 +9,24 @@ const Hero = () => {
       <div className="absolute top-20 left-10 animate-float">
         <div className="text-4xl opacity-70 animate-pulse-soft">♈</div>
       </div>
-      <div className="absolute top-40 right-20 animate-float" style={{animationDelay: '2s'}}>
+      <div className="absolute top-40 right-20 animate-float" style={{
+      animationDelay: '2s'
+    }}>
         <div className="text-5xl opacity-60 animate-pulse-soft">☽</div>
       </div>
-      <div className="absolute bottom-40 left-20 animate-float" style={{animationDelay: '4s'}}>
+      <div className="absolute bottom-40 left-20 animate-float" style={{
+      animationDelay: '4s'
+    }}>
         <div className="text-3xl opacity-80 animate-pulse-soft">✧</div>
       </div>
-      <div className="absolute top-1/3 right-1/4 animate-float" style={{animationDelay: '1s'}}>
+      <div className="absolute top-1/3 right-1/4 animate-float" style={{
+      animationDelay: '1s'
+    }}>
         <div className="text-3xl opacity-50 animate-pulse-soft">☿</div>
       </div>
-      <div className="absolute bottom-1/3 left-1/3 animate-float" style={{animationDelay: '3s'}}>
+      <div className="absolute bottom-1/3 left-1/3 animate-float" style={{
+      animationDelay: '3s'
+    }}>
         <div className="text-4xl opacity-60 animate-pulse-soft">♃</div>
       </div>
 
@@ -74,8 +79,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
