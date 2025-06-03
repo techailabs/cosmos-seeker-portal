@@ -1,10 +1,7 @@
-
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden star-field">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden star-field">
       {/* Background */}
       <div className="absolute inset-0 mystical-gradient opacity-90"></div>
       
@@ -12,16 +9,24 @@ const Hero = () => {
       <div className="absolute top-20 left-10 animate-float">
         <div className="text-4xl opacity-70 animate-pulse-soft">♈</div>
       </div>
-      <div className="absolute top-40 right-20 animate-float" style={{ animationDelay: '2s' }}>
+      <div className="absolute top-40 right-20 animate-float" style={{
+      animationDelay: '2s'
+    }}>
         <div className="text-5xl opacity-60 animate-pulse-soft">☽</div>
       </div>
-      <div className="absolute bottom-40 left-20 animate-float" style={{ animationDelay: '4s' }}>
+      <div className="absolute bottom-40 left-20 animate-float" style={{
+      animationDelay: '4s'
+    }}>
         <div className="text-3xl opacity-80 animate-pulse-soft">✧</div>
       </div>
-      <div className="absolute top-1/3 right-1/4 animate-float" style={{ animationDelay: '1s' }}>
+      <div className="absolute top-1/3 right-1/4 animate-float" style={{
+      animationDelay: '1s'
+    }}>
         <div className="text-3xl opacity-50 animate-pulse-soft">☿</div>
       </div>
-      <div className="absolute bottom-1/3 left-1/3 animate-float" style={{ animationDelay: '3s' }}>
+      <div className="absolute bottom-1/3 left-1/3 animate-float" style={{
+      animationDelay: '3s'
+    }}>
         <div className="text-4xl opacity-60 animate-pulse-soft">♃</div>
       </div>
 
@@ -33,7 +38,7 @@ const Hero = () => {
         
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
           Ancient Wisdom,
-          <span className="block golden-gradient bg-clip-text text-transparent">
+          <span className="block golden-gradient bg-clip-text text-slate-50">
             Modern Awakening
           </span>
         </h1>
@@ -45,19 +50,12 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Link to="/free-soul-report">
-            <Button 
-              size="lg" 
-              className="golden-gradient text-white hover:opacity-90 transition-all duration-300 px-8 py-4 text-lg font-semibold glow"
-            >
+            <Button size="lg" className="golden-gradient text-white hover:opacity-90 transition-all duration-300 px-8 py-4 text-lg font-semibold glow">
               Start Your Journey 🌟
             </Button>
           </Link>
           <Link to="/cosmic-quiz">
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-purple-900 transition-all duration-300 px-8 py-4 text-lg"
-            >
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-900 transition-all duration-300 px-8 py-4 text-lg">
               Get a Free Mini Reading
             </Button>
           </Link>
@@ -81,8 +79,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
