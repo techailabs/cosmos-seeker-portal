@@ -1,7 +1,10 @@
 
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import FindPathQuiz from '@/components/FindPathQuiz';
+import UnlockJourney from '@/components/UnlockJourney';
 import Services from '@/components/Services';
+import ScienceOfSoul from '@/components/ScienceOfSoul';
 import Testimonials from '@/components/Testimonials';
 import CosmicForecast from '@/components/CosmicForecast';
 import Dashboard from '@/components/Dashboard';
@@ -13,7 +16,10 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <FindPathQuiz />
+      <UnlockJourney />
       <Services />
+      <ScienceOfSoul />
       <Testimonials />
       <CosmicForecast />
       <Dashboard />
