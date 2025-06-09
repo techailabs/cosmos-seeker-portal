@@ -1,146 +1,255 @@
 
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 
 const Contact = () => {
-  const [selectedService, setSelectedService] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+    consultation: 'general'
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // TODO: Handle form submission
+  };
 
   return (
     <Layout>
-      <section className="py-12 md:py-20 bg-gradient-to-br from-purple-50 to-indigo-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 md:mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 md:mb-6 cosmic-text">Send Us a Signal</h1>
-              <p className="text-lg md:text-xl text-gray-600">
-                We're listening, always. Whether it's a big life shift or a tiny soul whisper, drop in below.
-              </p>
+      {/* Hero Section with Cosmic Theme */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 mystical-gradient"></div>
+        <div className="absolute inset-0 star-field opacity-50"></div>
+        
+        {/* Floating Communication Symbols */}
+        <div className="absolute top-20 left-16 animate-float">
+          <div className="text-6xl opacity-70 animate-pulse-soft text-glow-golden">📞</div>
+        </div>
+        <div className="absolute top-40 right-20 animate-float" style={{animationDelay: '2s'}}>
+          <div className="text-5xl opacity-80 animate-pulse-soft text-glow">💌</div>
+        </div>
+        <div className="absolute bottom-40 left-20 animate-float" style={{animationDelay: '4s'}}>
+          <div className="text-4xl opacity-90 animate-pulse-soft text-glow-golden">🌐</div>
+        </div>
+        <div className="absolute bottom-20 right-16 animate-float" style={{animationDelay: '1s'}}>
+          <div className="text-5xl opacity-60 animate-pulse-soft text-glow">📍</div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center text-white max-w-5xl mx-auto mb-16">
+            <div className="animate-scale-in mb-8">
+              <span className="text-9xl animate-cosmic-rotate">🌌</span>
             </div>
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 font-playfair text-glow-golden animate-fade-in-up">
+              Connect With Us
+            </h1>
+            <p className="text-2xl md:text-3xl mb-12 text-purple-100 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+              Begin your spiritual journey with a conversation that could change your life
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-              {/* Contact Form */}
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-                <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 cosmic-text">What do you need help with?</h2>
-                <form className="space-y-4 md:space-y-6">
+          {/* Contact Form & Info Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+            {/* Contact Form */}
+            <div className="glassmorphism rounded-3xl p-8 animate-fade-in-up">
+              <h2 className="text-3xl font-bold mb-8 text-white font-playfair text-center">Send Us a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                    <input 
-                      type="text" 
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
+                    <label className="block text-white/90 font-medium mb-2">Full Name</label>
+                    <Input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="bg-white/10 border-white/30 text-white placeholder-white/60 backdrop-blur-sm"
                       placeholder="Your full name"
+                      required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                    <input 
-                      type="email" 
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
+                    <label className="block text-white/90 font-medium mb-2">Email</label>
+                    <Input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="bg-white/10 border-white/30 text-white placeholder-white/60 backdrop-blur-sm"
                       placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-white/90 font-medium mb-2">Phone</label>
+                    <Input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="bg-white/10 border-white/30 text-white placeholder-white/60 backdrop-blur-sm"
+                      placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">What brings you here?</label>
-                    <select 
-                      value={selectedService}
-                      onChange={(e) => setSelectedService(e.target.value)}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
+                    <label className="block text-white/90 font-medium mb-2">Consultation Type</label>
+                    <select
+                      name="consultation"
+                      value={formData.consultation}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white backdrop-blur-sm focus:ring-2 focus:ring-purple-400 focus:border-transparent"
                     >
-                      <option value="">Choose your path...</option>
-                      <option value="soul-session">Soul Session Inquiry</option>
-                      <option value="spiritual-crisis">Spiritual Crisis Support</option>
-                      <option value="astrology">Astrology Reading</option>
-                      <option value="hypnotherapy">Hypnotherapy</option>
-                      <option value="music-therapy">Music Therapy</option>
-                      <option value="meditation">Meditation Guidance</option>
-                      <option value="palmistry">Palm & Face Reading</option>
-                      <option value="collaboration">Team Collaboration</option>
-                      <option value="media">Media Inquiry</option>
-                      <option value="other">Something Else</option>
+                      <option value="general" className="text-gray-800">General Inquiry</option>
+                      <option value="astrology" className="text-gray-800">Astrology Reading</option>
+                      <option value="palmistry" className="text-gray-800">Palmistry Session</option>
+                      <option value="hypnotherapy" className="text-gray-800">Hypnotherapy</option>
+                      <option value="meditation" className="text-gray-800">Meditation Guidance</option>
                     </select>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
-                    <textarea 
-                      rows={4}
-                      className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm md:text-base"
-                      placeholder="Share what's on your soul. We're here to listen..."
-                    ></textarea>
-                  </div>
-                  <Button className="w-full cosmic-gradient text-white hover:opacity-90 transition-opacity text-sm md:text-base py-2 md:py-3">
-                    Send Signal 📡
-                  </Button>
-                </form>
+                </div>
                 
-                <div className="mt-4 md:mt-6 p-3 md:p-4 bg-purple-50 rounded-lg">
-                  <p className="text-xs md:text-sm text-purple-700">
-                    <strong>What happens next:</strong> You'll hear from us within 24 hours. Our replies are personal, not robotic.
-                  </p>
+                <div>
+                  <label className="block text-white/90 font-medium mb-2">Subject</label>
+                  <Input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="bg-white/10 border-white/30 text-white placeholder-white/60 backdrop-blur-sm"
+                    placeholder="How can we help you?"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-white/90 font-medium mb-2">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/60 backdrop-blur-sm focus:ring-2 focus:ring-purple-400 focus:border-transparent resize-none"
+                    placeholder="Tell us about your spiritual journey and what guidance you're seeking..."
+                    required
+                  />
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  className="w-full golden-gradient text-white hover:opacity-90 transition-opacity py-4 text-lg font-semibold"
+                >
+                  Send Message ✨
+                </Button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              {/* Contact Details */}
+              <div className="glassmorphism rounded-3xl p-8">
+                <h3 className="text-2xl font-bold mb-6 text-white font-playfair">Get In Touch</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-3xl animate-pulse-soft">📍</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Sacred Center</h4>
+                      <p className="text-white/80">123 Spiritual Lane, Mystic City, MC 12345</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="text-3xl animate-pulse-soft">📞</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Call Us</h4>
+                      <p className="text-white/80">+91 98765 43210</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="text-3xl animate-pulse-soft">💌</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Email</h4>
+                      <p className="text-white/80">hello@gurujicosmos.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="text-3xl animate-pulse-soft">🕐</div>
+                    <div>
+                      <h4 className="text-white font-semibold">Hours</h4>
+                      <p className="text-white/80">Mon-Sun: 9:00 AM - 9:00 PM</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Contact Info */}
-              <div className="space-y-6 md:space-y-8">
-                <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-                  <h3 className="text-lg md:text-xl font-bold mb-4 cosmic-text">Immediate Spiritual Guidance</h3>
-                  <div className="space-y-3 md:space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <span className="text-xl md:text-2xl">📱</span>
-                      <div>
-                        <div className="font-medium text-gray-800">WhatsApp Support</div>
-                        <div className="text-sm text-gray-600">+1 (555) COSMOS-1</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-xl md:text-2xl">📧</span>
-                      <div>
-                        <div className="font-medium text-gray-800">Email</div>
-                        <div className="text-sm text-gray-600">hello@gurujicosmos.com</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-xl md:text-2xl">🌍</span>
-                      <div>
-                        <div className="font-medium text-gray-800">Global Sessions</div>
-                        <div className="text-sm text-gray-600">Available worldwide via video</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <Button className="w-full mt-4 md:mt-6 golden-gradient text-white hover:opacity-90 transition-opacity text-sm md:text-base">
-                    Message Us on WhatsApp 💬
+              {/* Quick Actions */}
+              <div className="glassmorphism rounded-3xl p-8">
+                <h3 className="text-2xl font-bold mb-6 text-white font-playfair">Quick Actions</h3>
+                <div className="space-y-4">
+                  <Button className="w-full cosmic-gradient text-white hover:opacity-90 transition-opacity">
+                    📅 Book Free Consultation
                   </Button>
-                </div>
-
-                <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-                  <h3 className="text-lg md:text-xl font-bold mb-4 cosmic-text">Sacred Hours</h3>
-                  <div className="space-y-2 text-gray-700 text-sm md:text-base">
-                    <div className="flex justify-between">
-                      <span>Monday - Friday</span>
-                      <span>9:00 AM - 8:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Saturday</span>
-                      <span>10:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span>12:00 PM - 5:00 PM</span>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm text-purple-600 mt-3 md:mt-4">All times in your local timezone</p>
-                </div>
-
-                <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 md:p-8 shadow-lg border border-red-100">
-                  <h3 className="text-lg md:text-xl font-bold mb-4 text-red-700">Spiritual Crisis Support</h3>
-                  <p className="text-gray-700 mb-4 text-sm md:text-base">
-                    Experiencing a dark night of the soul? Our 24/7 emergency guidance line is here for immediate support.
-                  </p>
-                  <Button variant="outline" className="w-full border-red-200 text-red-600 hover:bg-red-50 text-sm md:text-base">
-                    Emergency Spiritual Support 🆘
+                  <Button className="w-full bg-white/20 text-white hover:bg-white/30 transition-colors">
+                    💬 Live Chat Support
+                  </Button>
+                  <Button className="w-full bg-white/20 text-white hover:bg-white/30 transition-colors">
+                    📋 Download Brochure
                   </Button>
                 </div>
               </div>
+
+              {/* Emergency Contact */}
+              <div className="glassmorphism rounded-3xl p-8">
+                <h3 className="text-2xl font-bold mb-4 text-white font-playfair">24/7 Spiritual Support</h3>
+                <p className="text-white/80 mb-4">
+                  Need immediate guidance? Our emergency spiritual support line is available 24/7.
+                </p>
+                <Button className="w-full bg-red-500/80 text-white hover:bg-red-500 transition-colors">
+                  🆘 Emergency Hotline
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-indigo-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-5xl font-bold mb-6 cosmic-text font-playfair">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Quick answers to common questions</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white rounded-2xl p-6 shadow-lg animate-fade-in-up">
+              <h3 className="text-lg font-semibold cosmic-text mb-3">How quickly will you respond?</h3>
+              <p className="text-gray-600">We typically respond within 2-4 hours during business hours, and within 24 hours on weekends.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+              <h3 className="text-lg font-semibold cosmic-text mb-3">Do you offer free consultations?</h3>
+              <p className="text-gray-600">Yes! We offer a complimentary 15-minute consultation to understand your needs and recommend the best service.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+              <h3 className="text-lg font-semibold cosmic-text mb-3">What payment methods do you accept?</h3>
+              <p className="text-gray-600">We accept all major credit cards, UPI, net banking, and cash payments for in-person sessions.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+              <h3 className="text-lg font-semibold cosmic-text mb-3">Can I reschedule my appointment?</h3>
+              <p className="text-gray-600">Yes, you can reschedule up to 24 hours before your appointment without any charges.</p>
             </div>
           </div>
         </div>
