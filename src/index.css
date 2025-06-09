@@ -93,10 +93,25 @@
     @apply bg-background text-foreground;
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     min-height: 100vh;
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @layer utilities {
+  /* Typography Classes */
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Enhanced Gradient Classes */
   .cosmic-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
@@ -109,12 +124,21 @@
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   }
   
+  .divine-gradient {
+    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+  }
+  
+  .sacred-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #f093fb 25%, #ffecd2 50%, #fcb69f 75%, #764ba2 100%);
+  }
+  
   .aurora-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #667eea 100%);
     background-size: 400% 400%;
     animation: aurora 8s ease-in-out infinite;
   }
   
+  /* Enhanced Text Effects */
   .cosmic-text {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
@@ -122,11 +146,33 @@
     background-clip: text;
   }
   
+  .divine-text {
+    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .sacred-text {
+    background: linear-gradient(135deg, #f093fb 0%, #ffecd2 50%, #fcb69f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Advanced Effects */
   .glassmorphism {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  
+  .glassmorphism-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
   }
   
   .glow {
@@ -137,10 +183,19 @@
     box-shadow: 0 0 30px rgba(102, 126, 234, 0.6), 0 0 60px rgba(102, 126, 234, 0.4), 0 0 90px rgba(102, 126, 234, 0.2);
   }
   
+  .glow-golden {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5), 0 0 50px rgba(255, 215, 0, 0.3);
+  }
+  
   .text-glow {
     text-shadow: 0 0 10px rgba(102, 126, 234, 0.6), 0 0 20px rgba(102, 126, 234, 0.4);
   }
   
+  .text-glow-golden {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
+  }
+  
+  /* Enhanced Animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -157,6 +212,19 @@
     animation: shimmer 2s ease-in-out infinite;
   }
   
+  .animate-typing {
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+  
+  /* Keyframes */
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(5deg); }
@@ -182,6 +250,39 @@
     50% { opacity: 0.5; }
   }
   
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 40px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  /* Enhanced Star Field */
   .star-field::before {
     content: '';
     position: absolute;
@@ -197,30 +298,55 @@
       radial-gradient(2px 2px at 160px 30px, #fff, transparent),
       radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.6), transparent),
       radial-gradient(2px 2px at 250px 80px, #fff, transparent),
-      radial-gradient(1px 1px at 300px 20px, rgba(255,255,255,0.7), transparent);
+      radial-gradient(1px 1px at 300px 20px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(3px 3px at 350px 60px, rgba(255, 215, 0, 0.8), transparent),
+      radial-gradient(2px 2px at 380px 90px, rgba(255, 192, 203, 0.6), transparent);
     background-repeat: repeat;
-    background-size: 320px 200px;
-    animation: sparkle 25s linear infinite;
+    background-size: 400px 300px;
+    animation: sparkle 30s linear infinite;
     pointer-events: none;
   }
   
   @keyframes sparkle {
     0% { transform: translateX(0); }
-    100% { transform: translateX(320px); }
+    100% { transform: translateX(400px); }
+  }
+  
+  /* Sacred Geometry Patterns */
+  .sacred-geometry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(255,255,255,0.1) 60deg, transparent 120deg),
+      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    animation: sacred-rotate 40s linear infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes sacred-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
   
   /* Enhanced Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
   }
   
   ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
   }
   
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 4px;
+    border-radius: 10px;
+    border: 2px solid transparent;
   }
   
   ::-webkit-scrollbar-thumb:hover {
@@ -229,7 +355,24 @@
   
   /* Enhanced Selection */
   ::selection {
-    background: rgba(102, 126, 234, 0.3);
+    background: rgba(102, 126, 234, 0.4);
     color: white;
+  }
+  
+  /* Responsive Typography */
+  .hero-title {
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.2;
+  }
+  
+  .hero-description {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.6;
   }
 }
