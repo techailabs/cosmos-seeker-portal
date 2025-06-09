@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -16,6 +15,7 @@ const HypnotherapyService = () => {
       price: "₹2,499",
       originalPrice: "₹3,499",
       duration: "90 minutes",
+      popular: false,
       features: [
         "One-on-one hypnotherapy session",
         "Personalized induction technique",
@@ -29,6 +29,7 @@ const HypnotherapyService = () => {
       price: "₹6,999",
       originalPrice: "₹9,999",
       duration: "3 Sessions",
+      popular: true,
       features: [
         "3 progressive hypnotherapy sessions",
         "Customized treatment plan",
@@ -36,14 +37,14 @@ const HypnotherapyService = () => {
         "Weekly progress check-ins",
         "Personal meditation guide",
         "Emergency support access"
-      ],
-      popular: true
+      ]
     },
     package6: {
       name: "Complete Healing Journey",
       price: "₹12,999",
       originalPrice: "₹18,999",
       duration: "6 Sessions",
+      popular: false,
       features: [
         "6 comprehensive sessions",
         "Full psychological assessment",
