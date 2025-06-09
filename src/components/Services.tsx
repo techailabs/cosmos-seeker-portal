@@ -76,7 +76,7 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            <span className="cosmic-text">What We Offer</span>
+            <span className="divine-text text-glow">What We Offer</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Unlock the tools of self-realization. Our services blend timeless spiritual knowledge 
@@ -84,7 +84,7 @@ const Services = () => {
           </p>
           <div className="mt-6 inline-flex items-center space-x-2 bg-green-100 px-4 py-2 rounded-full">
             <IndianRupee className="w-4 h-4 text-green-600" />
-            <span className="text-green-700 font-semibold">Special Launch Prices in INR</span>
+            <span className="text-green-700 font-semibold">All Prices in Indian Rupees (₹)</span>
           </div>
         </div>
 
@@ -92,7 +92,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group text-center relative overflow-hidden"
+              className="bg-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group text-center relative overflow-hidden glow"
             >
               {/* Discount Badge */}
               <div className="absolute top-3 right-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
@@ -103,13 +103,13 @@ const Services = () => {
                 {service.icon}
               </div>
               
-              <h3 className="text-lg md:text-xl font-bold mb-2 cosmic-text">{service.title}</h3>
-              <p className="text-xs md:text-sm text-purple-600 mb-2 md:mb-3 italic">{service.tagline}</p>
+              <h3 className="text-lg md:text-xl font-bold mb-2 sacred-text text-glow-golden">{service.title}</h3>
+              <p className="text-xs md:text-sm text-purple-600 mb-2 md:mb-3 italic font-semibold">{service.tagline}</p>
               
               {/* Rating */}
               <div className="flex items-center justify-center mb-2">
                 <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span className="text-sm text-gray-600 ml-1">{service.rating}</span>
+                <span className="text-sm text-gray-600 ml-1 font-medium">{service.rating}</span>
               </div>
 
               <p className="text-gray-600 mb-3 md:mb-4 text-xs md:text-sm leading-relaxed">{service.description}</p>
@@ -129,7 +129,7 @@ const Services = () => {
               {/* Pricing */}
               <div className="mb-3">
                 <div className="flex items-center justify-center space-x-2">
-                  <span className="text-lg font-bold cosmic-text">{service.price}</span>
+                  <span className="text-lg font-bold divine-text text-glow">{service.price}</span>
                   <span className="text-sm text-gray-400 line-through">{service.originalPrice}</span>
                 </div>
                 <p className="text-xs text-gray-500">+ 18% GST</p>
@@ -145,7 +145,7 @@ const Services = () => {
               </ul>
 
               <Link to={service.link}>
-                <button className="w-full py-2 px-3 md:px-4 cosmic-gradient text-white rounded-lg hover:opacity-90 transition-all duration-300 text-xs md:text-sm">
+                <button className="w-full py-2 px-3 md:px-4 golden-gradient text-white rounded-lg hover:opacity-90 transition-all duration-300 text-xs md:text-sm glow-golden">
                   Book Now
                 </button>
               </Link>
@@ -155,20 +155,20 @@ const Services = () => {
 
         {/* Additional Info */}
         <div className="mt-12 text-center">
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 max-w-3xl mx-auto">
-            <h3 className="text-xl font-bold cosmic-text mb-4">Why Choose Our Services?</h3>
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 max-w-3xl mx-auto glassmorphism">
+            <h3 className="text-xl font-bold cosmic-text mb-4 text-glow">Why Choose Our Services?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="flex items-center justify-center space-x-2">
                 <span className="text-green-600">✓</span>
-                <span>Instant Results & Reports</span>
+                <span className="font-medium">Instant Results & Reports</span>
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <span className="text-green-600">✓</span>
-                <span>Experienced Practitioners</span>
+                <span className="font-medium">Experienced Practitioners</span>
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <span className="text-green-600">✓</span>
-                <span>24/7 Support Available</span>
+                <span className="font-medium">24/7 Support Available</span>
               </div>
             </div>
           </div>

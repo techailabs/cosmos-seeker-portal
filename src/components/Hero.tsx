@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden star-field">
       {/* Enhanced Background with Multiple Layers */}
-      <div className="absolute inset-0 sacred-gradient opacity-90"></div>
+      <div className="absolute inset-0 aurora-gradient opacity-90"></div>
       <div className="absolute inset-0 sacred-geometry opacity-30"></div>
       
       {/* Floating Elements - Enhanced with Sacred Symbols */}
@@ -65,48 +65,48 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-7xl mx-auto">
         <div className="animate-pulse-soft mb-8 md:mb-12">
-          <span className="text-6xl md:text-8xl animate-cosmic-rotate">🔮</span>
+          <span className="text-6xl md:text-8xl animate-cosmic-rotate text-glow-golden">🔮</span>
         </div>
         
-        <h1 className="hero-title font-playfair mb-6 md:mb-8 text-glow-golden leading-tight animate-fade-in-up">
-          <span className="block divine-text">
+        <h1 className="hero-title font-playfair mb-6 md:mb-8 leading-tight animate-fade-in-up">
+          <span className="block divine-text text-glow-golden">
             {typedText}
-            <span className="animate-pulse">|</span>
+            <span className="animate-pulse sacred-text">|</span>
           </span>
         </h1>
         
-        <p className="hero-description font-inter mb-8 md:mb-12 text-gray-100 max-w-5xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+        <p className="hero-description font-inter mb-8 md:mb-12 max-w-5xl mx-auto leading-relaxed animate-fade-in-up text-gray-100" style={{animationDelay: '0.5s'}}>
           We decode your karma, rewire your emotions, and realign you with your purpose — 
-          using <span className="sacred-text font-semibold">ancient science</span> and <span className="cosmic-text font-semibold">modern therapy</span>.
+          using <span className="sacred-text font-semibold text-glow">ancient science</span> and <span className="cosmic-text font-semibold text-glow">modern therapy</span>.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mb-12 md:mb-16 animate-fade-in-up" style={{animationDelay: '1s'}}>
           <Link to="/cosmic-quiz" className="w-full sm:w-auto">
-            <Button size="lg" className="sacred-gradient text-white hover:opacity-90 transition-all duration-300 px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl font-semibold glow-golden w-full sm:w-auto font-inter">
+            <Button size="lg" className="aurora-gradient text-white hover:opacity-90 transition-all duration-300 px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl font-semibold w-full sm:w-auto font-inter glow-golden">
               Get Your Soul Map Free 🌟
             </Button>
           </Link>
           <Link to="/book-session" className="w-full sm:w-auto">
-            <Button size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl w-full sm:w-auto font-inter">
+            <Button size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl w-full sm:w-auto font-inter glassmorphism glow">
               Book a Session
             </Button>
           </Link>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center animate-fade-in-up" style={{animationDelay: '1.5s'}}>
-          <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 glow">
             <div className="text-3xl md:text-4xl mb-3">⚡</div>
-            <div className="text-2xl md:text-3xl font-bold mb-2 font-playfair">89%</div>
+            <div className="text-2xl md:text-3xl font-bold mb-2 font-playfair divine-text text-glow">89%</div>
             <div className="text-base md:text-lg text-gray-200 font-inter">Feel clarity in 2 sessions</div>
           </div>
-          <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 glow">
             <div className="text-3xl md:text-4xl mb-3">🎯</div>
-            <div className="text-2xl md:text-3xl font-bold mb-2 font-playfair">73%</div>
+            <div className="text-2xl md:text-3xl font-bold mb-2 font-playfair cosmic-text text-glow">73%</div>
             <div className="text-base md:text-lg text-gray-200 font-inter">Find breakthrough decisions</div>
           </div>
-          <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+          <div className="glassmorphism rounded-2xl p-6 md:p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 glow">
             <div className="text-3xl md:text-4xl mb-3">💫</div>
-            <div className="text-2xl md:text-3xl font-bold mb-2 font-playfair">95%</div>
+            <div className="text-2xl md:text-3xl font-bold mb-2 font-playfair sacred-text text-glow">95%</div>
             <div className="text-base md:text-lg text-gray-200 font-inter">Would recommend to friends</div>
           </div>
         </div>
