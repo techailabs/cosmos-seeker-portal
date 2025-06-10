@@ -414,6 +414,105 @@ export type Database = {
         }
         Relationships: []
       }
+      practitioner_profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          created_at: string
+          email: string
+          experience_years: number | null
+          hourly_rate_inr: number | null
+          id: string
+          is_active: boolean | null
+          name: string
+          rating: number | null
+          specialization: string[] | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          email: string
+          experience_years?: number | null
+          hourly_rate_inr?: number | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          rating?: number | null
+          specialization?: string[] | null
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          email?: string
+          experience_years?: number | null
+          hourly_rate_inr?: number | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          rating?: number | null
+          specialization?: string[] | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          birth_date: string | null
+          birth_place: string | null
+          birth_time: string | null
+          created_at: string
+          energy_level: number | null
+          full_name: string | null
+          id: string
+          karma_points: number | null
+          meditation_streak: number | null
+          phone: string | null
+          preferences: Json | null
+          spiritual_level: string | null
+          subscription_plan: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          birth_date?: string | null
+          birth_place?: string | null
+          birth_time?: string | null
+          created_at?: string
+          energy_level?: number | null
+          full_name?: string | null
+          id?: string
+          karma_points?: number | null
+          meditation_streak?: number | null
+          phone?: string | null
+          preferences?: Json | null
+          spiritual_level?: string | null
+          subscription_plan?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          birth_date?: string | null
+          birth_place?: string | null
+          birth_time?: string | null
+          created_at?: string
+          energy_level?: number | null
+          full_name?: string | null
+          id?: string
+          karma_points?: number | null
+          meditation_streak?: number | null
+          phone?: string | null
+          preferences?: Json | null
+          spiritual_level?: string | null
+          subscription_plan?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       seo_settings: {
         Row: {
           canonical_url: string | null
@@ -737,6 +836,39 @@ export type Database = {
         }
         Relationships: []
       }
+      spiritual_reports: {
+        Row: {
+          content: Json | null
+          created_at: string
+          file_url: string | null
+          generated_date: string
+          id: string
+          report_type: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          content?: Json | null
+          created_at?: string
+          file_url?: string | null
+          generated_date?: string
+          id?: string
+          report_type: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          content?: Json | null
+          created_at?: string
+          file_url?: string | null
+          generated_date?: string
+          id?: string
+          report_type?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       sub_services: {
         Row: {
           created_at: string | null
@@ -780,6 +912,36 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      subscription_plans: {
+        Row: {
+          created_at: string
+          duration_months: number | null
+          features: string[] | null
+          id: string
+          is_active: boolean | null
+          name: string
+          price_inr: number
+        }
+        Insert: {
+          created_at?: string
+          duration_months?: number | null
+          features?: string[] | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          price_inr: number
+        }
+        Update: {
+          created_at?: string
+          duration_months?: number | null
+          features?: string[] | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          price_inr?: number
+        }
+        Relationships: []
       }
       tags: {
         Row: {
@@ -871,6 +1033,48 @@ export type Database = {
           session_id?: string | null
           tool_name?: string
           user_agent?: string | null
+        }
+        Relationships: []
+      }
+      user_sessions: {
+        Row: {
+          created_at: string
+          duration_minutes: number | null
+          id: string
+          notes: string | null
+          practitioner_name: string | null
+          price_inr: number | null
+          rating: number | null
+          service_type: string
+          session_date: string
+          status: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          duration_minutes?: number | null
+          id?: string
+          notes?: string | null
+          practitioner_name?: string | null
+          price_inr?: number | null
+          rating?: number | null
+          service_type: string
+          session_date: string
+          status?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          duration_minutes?: number | null
+          id?: string
+          notes?: string | null
+          practitioner_name?: string | null
+          price_inr?: number | null
+          rating?: number | null
+          service_type?: string
+          session_date?: string
+          status?: string | null
+          user_id?: string
         }
         Relationships: []
       }

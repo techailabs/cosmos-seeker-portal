@@ -1,6 +1,7 @@
 
 import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface ProtectedRouteProps {
   children: ReactNode;
@@ -8,15 +9,24 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ children, requiredRole = 'user' }: ProtectedRouteProps) => {
-  // TODO: Implement actual authentication check with Supabase
-  const isAuthenticated = false; // This will be replaced with actual auth state
-  const userRole: 'user' | 'admin' = 'user'; // This will be fetched from auth context
+  const { user, isAdmin, loading } = useAuth();
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin text-6xl mb-4">🔮</div>
+          <p className="text-white text-xl">Verifying your cosmic access...</p>
+        </div>
+      </div>
+    );
   }
 
-  if (requiredRole === 'admin' && userRole === 'user') {
+  if (!user) {
+    return <Navigate to="/auth" replace />;
+  }
+
+  if (requiredRole === 'admin' && !isAdmin) {
     return <Navigate to="/dashboard" replace />;
   }
 

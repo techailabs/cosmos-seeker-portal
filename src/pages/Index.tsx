@@ -1,38 +1,26 @@
 
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import FindPathQuiz from '@/components/FindPathQuiz';
-import UnlockJourney from '@/components/UnlockJourney';
+import EnhancedHero from '@/components/EnhancedHero';
+import EnhancedHeader from '@/components/EnhancedHeader';
 import Services from '@/components/Services';
-import EnhancedServices from '@/components/EnhancedServices';
-import ScienceOfSoul from '@/components/ScienceOfSoul';
 import Testimonials from '@/components/Testimonials';
-import CosmicForecast from '@/components/CosmicForecast';
-import Dashboard from '@/components/Dashboard';
-import SpiritualDashboard from '@/components/SpiritualDashboard';
-import PremiumFeatures from '@/components/PremiumFeatures';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
-import ChatBot from '@/components/ChatBot';
+import ScienceOfSoul from '@/components/ScienceOfSoul';
+import CosmicForecast from '@/components/CosmicForecast';
+import PremiumFeatures from '@/components/PremiumFeatures';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <FindPathQuiz />
-      <UnlockJourney />
+      <EnhancedHeader />
+      <EnhancedHero />
       <Services />
-      <EnhancedServices />
       <ScienceOfSoul />
-      <SpiritualDashboard />
-      <Testimonials />
-      <CosmicForecast />
       <PremiumFeatures />
-      <Dashboard />
+      <CosmicForecast />
+      <Testimonials />
       <CTA />
       <Footer />
-      <ChatBot />
     </div>
   );
 };
