@@ -36,17 +36,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setSession(session);
         setUser(session?.user ?? null);
         
-        if (session?.user) {
-          // Check if user is admin
-          const { data: adminData } = await supabase
-            .from('admin_users')
-            .select('*')
-            .eq('email', session.user.email)
-            .single();
-          setIsAdmin(!!adminData);
-        } else {
-          setIsAdmin(false);
-        }
+        // Temporarily disable admin check since admin_users table doesn't exist
+        // if (session?.user) {
+        //   // Check if user is admin
+        //   const { data: adminData } = await supabase
+        //     .from('admin_users')
+        //     .select('*')
+        //     .eq('email', session.user.email)
+        //     .single();
+        //   setIsAdmin(!!adminData);
+        // } else {
+        //   setIsAdmin(false);
+        // }
+        setIsAdmin(false);
         setLoading(false);
       }
     );
